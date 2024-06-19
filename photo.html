@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="photo.css">
+</head>
+<body>
+    <header>
+        <h3>•─────⋅☾경주 사진 모음☽⋅─────•</h3>
+    </header>
+    <div id="large-image-container" class="large-image-container">
+        <span id="close-btn" class="close-btn">&times;</span>
+        <img id="large-image" class="large-image" src="" alt="">
+    </div>
+    <div id="wrapper">
+        <div class="card">
+            <h4>첨성대</h4>
+            <figure>
+                <img src="ph_chumsung.jpg" alt="첨성대" class="clickable-image">
+            </figure>
+            <p>생각보다는 아담한 사이즈였다.</p>
+        </div>
+        <div class="card">
+            <h4>경주역</h4>
+            <figure>
+                <img src="ph_gjstation.jpg" alt="경주역" class="clickable-image">
+            </figure>
+            <p>ktx를 타고 다녀왔다.</p>
+        </div>
+        <div class="card">
+            <h4>석가탑</h4>
+            <figure>
+                <img src="ph_seoktop.jpg" alt="석가탑" class="clickable-image">
+            </figure>
+            <p>소원등으로 꾸며진 석가탑. 고풍스러운 느낌이 있다.</p>
+        </div>
+        <div class="card">
+            <h4>다보탑</h4>
+            <figure>
+                <img src="ph_dabotop.jpg" alt="다보탑" class="clickable-image">
+            </figure>
+            <p>다보탑은 석가탑의 바로 옆에 위치해있으며 역시나 굉장히 멋스러웠다.</p>
+        </div>
+        <div class="card">
+            <h4>소원등</h4>
+            <figure>
+                <img src="ph_wishdeung.jpg" alt="소원등" class="clickable-image">
+            </figure>
+            <p>부처님 오신날을 앞두고 있어 형형색색의 소원등을 많이 볼 수 있었다. 모두 원하는 바가 이루어 지길!</p>
+        </div>
+        <div class="card">
+            <h4>석굴암 주변</h4>
+            <figure>
+                <img src="ph_seokgul.jpg" alt="석굴암 주변" class="clickable-image">
+            </figure>
+            <p>석굴암은 사진촬영이 금지되어있어 눈에만 담고왔다. 사진은 석굴암을 보고 내려오는 길에서 찍었는데, 정말 날이 맑으면 바다도 보인다고 한다. </p>
+        </div>
+        <div class="card">
+            <h4>무열왕릉</h4>
+            <figure>
+                <img src="ph_mooyeol.jpg" alt="무열왕릉" class="clickable-image">
+            </figure>
+            <p>무열왕(김춘추)의 묘이다. 정말 거대했다. 주변 소나무들과 잘 어울어져있었다.</p>
+        </div>
+        <div class="card">
+            <h4>무열왕릉 귀부비</h4>
+            <figure>
+                <img src="ph_turtle.jpg" alt="귀부비" class="clickable-image">
+            </figure>
+            <p>무열왕릉 옆에 위치하는 귀부비이다. 붉은 입가는 의도적으로 만든 것이며, 온힘을 주고 나아가는 거북이를 표현했다고 한다.</p>
+        </div>
+        <div class="card">
+            <h4>민속마을</h4>
+            <figure>
+                <img src="ph_minsok.jpg" alt="민속마을" class="clickable-image">
+            </figure>
+            <p>경리단길 내부의 민속마을이다.</p>
+        </div>
+        <div class="card">
+            <h4>장미</h4>
+            <figure>
+                <img src="ph_rose.jpg" alt="장미" class="clickable-image">
+            </figure>
+            <p>만개한 5월의 장미.</p>
+        </div>
+    </div>
+    <a href="home.html">홈화면으로 돌아가기</a>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const largeImageContainer = document.getElementById("large-image-container");
+    const largeImage = document.getElementById("large-image");
+    const closeBtn = document.getElementById("close-btn");
+
+    document.querySelectorAll(".clickable-image").forEach(image => {
+        image.addEventListener("click", function() {
+            largeImage.src = this.src;
+            largeImage.alt = this.alt;
+            largeImageContainer.style.display = "flex";
+        });
+    });
+
+    closeBtn.addEventListener("click", function() {
+        largeImageContainer.style.display = "none";
+    });
+});
+
+</script>
+</html>

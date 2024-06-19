@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채팅방 예제</title>
+    <link rel="stylesheet" href="talk.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>채팅방</h1>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="메시지를 입력하세요..." />
+            <button id="send-button">전송</button>
+        </div>
+    </div>
+    <a href="home.html">홈화면으로 돌아가기</a>
+    <script>
+        document.getElementById('send-button').addEventListener('click', sendMessage);
+document.getElementById('chat-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const messageText = input.value.trim();
+
+    if (messageText !== '') {
+        const message = document.createElement('div');
+        message.classList.add('message', 'user');
+        message.textContent = messageText;
+
+        document.getElementById('chat-messages').appendChild(message);
+        input.value = '';
+        input.focus();
+        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+    }
+}
+
+    </script>
+</body>
+</html>
