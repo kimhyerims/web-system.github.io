@@ -75,3 +75,19 @@ body {
 #send-button:hover {
     background-color: #555;
 }
+.home-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(54, 74, 61);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.home-link:hover {
+    background-color: rgb(37, 54, 46);
+}

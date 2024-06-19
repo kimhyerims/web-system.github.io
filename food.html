@@ -10,6 +10,52 @@
     <header>
         <h3>•─────⋅☾경주 음식 모음☽⋅─────•</h3>
     </header>
-    <a href="home.html">홈화면으로 돌아가기</a>
+    <div class="chart">
+        <div class="card">
+            <h4 onclick="openPopup('https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EA%B2%BD%EC%A3%BC+%EB%8F%84%EC%86%94%EB%A7%88%EC%9D%84')">도솔마을-수리산정식 2인</h4>
+            <figure>
+                <img src="f_han.jpg">
+            </figure>
+            <p>정말 맛있게 먹은 한정식! 모든 반찬이 맛있었다</p>
+            <p class="star">★★★★★</p>
+        </div>
+        <div class="card">
+            <h4 onclick="openPopup('https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EA%B2%BD%EC%A3%BC+%ED%99%A9%EB%82%A8%EB%B0%80%EB%A9%B4')">황남밀면-비빔밀면</h4>
+            <figure>
+                <img src="f_hnmil.jpg">
+            </figure>
+            <p>밀면을 처음 먹어봤는데, 쫄깃하고 새콤해서 정말 맛있었다.</p>
+            <p class="star">★★★★★</p>
+        </div>
+        <div class="card">
+            <h4 onclick="openPopup('https://search.naver.com/search.naver?where=nexearch&sm=top_sly.hst&fbm=0&acr=1&ie=utf8&query=1894%EC%82%AC%EB%9E%91%EC%B1%84')">1894 사랑채-눈꽃팥빙수</h4>
+            <figure>
+                <img src="f_bing.jpg">
+            </figure>
+            <p>달달하고 카페 분위기도 좋았지만 빙수 자체는 다른 곳들이 더 맛있다고 생각한다.</p>
+            <p class="star">★★★★☆</p>
+        </div>
+        <div class="card">
+            <h4 onclick="openPopup('https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%8B%A0%EB%9D%BC%EC%8C%88%EB%B0%A5%EC%8B%9D%EB%8B%B9')">신라쌈밥식당-떡갈비쌈밥</h4>
+            <p>밑반찬 전부 맛있었고 든든한 한끼였다.</p>
+            <p class="star">★★★★★</p>
+        </div>
+        <div class="card">
+            <h4 onclick="openPopup('https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%AB%80%EB%93%9C%EA%B8%B0%EC%83%81%ED%9A%8C+%EA%B2%BD%EC%A3%BC%EC%B2%A8%EC%84%B1%EB%8C%80%EC%A0%90')">쫀드기상회 경주첨성대점</h4>
+            <p>간단한 간식으로 먹기 좋았지만 기름맛이 강했다.</p>
+            <p class="star">★★★★☆</p>
+        </div>
+        <div class="card">
+            <h4 onclick="openPopup('https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EA%B2%BD%EC%A3%BC%EC%8B%AD%EC%9B%90%EB%B9%B5+%EC%B2%A8%EC%84%B1%EB%8C%80')">경주십원빵 첨성대</h4>
+            <p>좋아하는 치즈가 가득 들어있어 정말 맛있었다. 꼭 따뜻할때 먹는 것을 추천</p>
+            <p class="star">★★★★★</p>
+        </div>
+    </div>
+    <a href="home.html" class="home-link">홈화면으로 돌아가기</a>
 </body>
+<script>
+    function openPopup(url) {
+        window.open(url, 'popupWindow', 'width=600,height=400,scrollbars=yes');
+    }
+</script>
 </html>

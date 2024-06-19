@@ -1,3 +1,44 @@
-#mainTitle{
-    background-color:rgb(194, 232, 219);
+body {
+    background-color: rgb(194, 232, 219);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#mainTitle {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 2px solid rgb(174, 202, 189);
+}
+
+#mainTitle p {
+    margin: 0;
+    font-size: 18px;
+    color: rgb(54, 74, 61);
+}
+
+#mainTitle h3 {
+    margin: 5px 0 0 0;
+    font-size: 36px;
+    color: rgb(54, 74, 61);
+}
+
+.login {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(54, 74, 61);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login a:hover {
+    background-color: rgb(37, 54, 46);
 }

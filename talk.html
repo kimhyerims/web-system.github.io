@@ -17,31 +17,40 @@
             <button id="send-button">전송</button>
         </div>
     </div>
-    <a href="home.html">홈화면으로 돌아가기</a>
+    <a href="home.html" class="home-link">홈화면으로 돌아가기</a>
     <script>
         document.getElementById('send-button').addEventListener('click', sendMessage);
-document.getElementById('chat-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        sendMessage();
-    }
-});
-
-function sendMessage() {
-    const input = document.getElementById('chat-input');
-    const messageText = input.value.trim();
-
-    if (messageText !== '') {
-        const message = document.createElement('div');
-        message.classList.add('message', 'user');
-        message.textContent = messageText;
-
-        document.getElementById('chat-messages').appendChild(message);
-        input.value = '';
-        input.focus();
-        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-    }
-}
-
+        document.getElementById('chat-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messageText = input.value.trim();
+            
+            if (messageText !== '') {
+                const message = document.createElement('div');
+                message.classList.add('message', 'user');
+                message.textContent = messageText;
+                
+                document.getElementById('chat-messages').appendChild(message);
+                input.value = '';
+                input.focus();
+                document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+            }
+        }window.onload = function() {
+            var memberStatus = getCookie('member');
+            if (memberStatus !== 'loggedIn') {
+                alert("회원만 접근 가능한 페이지입니다.");
+                window.location.href = "home.html";
+            }
+        }
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
     </script>
 </body>
 </html>

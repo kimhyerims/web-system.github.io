@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="place.css">
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gpcntguig0&submodules=geocoder""></script>
 </head>
 <body>
     <header>
@@ -17,6 +18,8 @@
                     <h3>첨성대</h3>
                 </head>
                 <p>삼국시대 신라 시기의 천문관측소</p>
+                <div id="map1" style="width:40%;height:300px;"></div>
+
             </div> 
         </article>
         <article>
@@ -25,6 +28,7 @@
                     <h3>석굴암</h3>
                 </head>
                 <p>유네스코 세계문화유산으로 지정된 삼국시대 신라의 사찰 암자</p>
+                <div id="map2" style="width:40%;height:300px;"></div>
             </div>
         </article>
         <article>
@@ -33,6 +37,7 @@
                     <h3>불국사</h3>
                 </head>
                 <p>유네스코 세계문화유산으로 지정된 삼국시대 신라의 사찰 암자</p>
+                <div id="map3" style="width:40%;height:300px;"></div>
             </div>
         </article>
         <article>
@@ -40,18 +45,44 @@
                 <head>
                     <h3>천마총</h3>
                 </head>
-                <p>삼국시대 신라 시기의 고분으로, 상당한 양의 문화재가 출토되었다</p>
-            </div>
-        </article>
-        <article>
-            <div class="place5">
-                <head>
-                    <h3></h3>
-                </head>
-                <p>유네스코 세계문화유산으로 지정된 삼국시대 신라의 사찰 암자</p>
+                <p>삼국시 대 신라 시기의 고분으로, 상당한 양의 문화재가 출토되었다</p>
+                <div id="map4" style="width:40%;height:300px;"></div>
             </div>
         </article>
     </section>
-    <a href="home.html">홈화면으로 돌아가기</a>
+    <a href="home.html" class="home-link">홈화면으로 돌아가기</a>
 </body>
+<script>
+    var addresses = [
+            "경북 경주시 인왕동 839-1",
+            "경북 경주시 석굴로 238",
+            "경북 경주시 불국로 385 불국사",
+            "경북 경주시 황남동 262"
+        ];
+    function initMap(mapId, address) {
+        var mapOptions = {
+            center: new naver.maps.LatLng(37.5665, 126.9780),
+                zoom: 17
+            };
+            var map = new naver.maps.Map(mapId, mapOptions);
+
+            naver.maps.Service.geocode({ query: address }, function(status, response) {
+                var result = response.v2.addresses[0];
+                var lat = result.y;
+                var lng = result.x;
+                
+                var latlng = new naver.maps.LatLng(lat, lng);
+                map.setCenter(latlng);
+                
+                var marker = new naver.maps.Marker({
+                    position: latlng,
+                    map: map
+                });
+            });
+        }
+        initMap('map1', addresses[0]);
+        initMap('map2', addresses[1]);
+        initMap('map3', addresses[2]);
+        initMap('map4', addresses[3]);
+</script>
 </html>
